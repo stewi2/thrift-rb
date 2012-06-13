@@ -1,4 +1,4 @@
-# encoding: ascii-8bit
+# encoding: utf-8
 #
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements. See the NOTICE file
@@ -34,7 +34,7 @@ module Thrift
 
     def open?; true end
     def read(sz); @inbuf.read sz end
-    def write(buf); @outbuf << buf end
+    def write(buf); @outbuf << buf.force_encoding("UTF-8") end
 
     def add_headers(headers)
       @headers = @headers.merge(headers)

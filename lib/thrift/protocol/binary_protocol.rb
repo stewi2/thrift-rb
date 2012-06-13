@@ -108,7 +108,7 @@ module Thrift
     end
 
     def write_string(str)
-      write_i32(str.length)
+      write_i32(str.bitesize)
       trans.write(str)
     end
 
