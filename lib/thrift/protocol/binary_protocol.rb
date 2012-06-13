@@ -215,7 +215,7 @@ module Thrift
 
     def read_string
       sz = read_i32
-      dat = trans.read_all(sz)
+      dat = trans.read_all(sz).force_encoding('UTF-8')
       dat
     end
 
